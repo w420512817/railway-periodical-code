@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <el-container>
+      <el-header>Header</el-header>
+      <el-main>Main</el-main>
+    </el-container>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+// import quesRadioBase from "../../components/QuesRadioBase";
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  components: {},
+  data() {
+    return {
+      userId: this.$route.query.userId || ""
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      //   this.$api.question
+      //     .readQuestionniare([this.questionId, this.type])
+      //     .then(res => {
+      //       console.log(res);
+      //       if (res.body) {
+      //       }
+      //     });
+    }
   }
 };
 </script>
+<style lang="less" scoped>
+// @import "../../assets/css/question";
+</style>
