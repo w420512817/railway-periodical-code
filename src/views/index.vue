@@ -1,8 +1,11 @@
 <template>
   <div>
     <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
+      <el-header>铁道车辆</el-header>
+      <el-main>
+        Main
+        {{data}}
+      </el-main>
     </el-container>
   </div>
 </template>
@@ -12,7 +15,9 @@ export default {
   components: {},
   data() {
     return {
-      userId: this.$route.query.userId || ""
+      userId: this.$route.query.userId || "",
+      id: "4406",
+      data: ""
     };
   },
   mounted() {
@@ -20,13 +25,12 @@ export default {
   },
   methods: {
     init() {
-      //   this.$api.question
-      //     .readQuestionniare([this.questionId, this.type])
-      //     .then(res => {
-      //       console.log(res);
-      //       if (res.body) {
-      //       }
-      //     });
+      this.$api.doclist.findAllDic([this.id]).then(res => {
+        console.log(res);
+        if (res.body) {
+          this.data = res.body;
+        }
+      });
     }
   }
 };
