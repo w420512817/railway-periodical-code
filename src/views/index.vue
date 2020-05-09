@@ -3,8 +3,7 @@
     <el-container>
       <el-header>铁道车辆</el-header>
       <el-main>
-        Main
-        {{data}}
+        <div>{{ listData }}</div>
       </el-main>
     </el-container>
   </div>
@@ -17,7 +16,7 @@ export default {
     return {
       userId: this.$route.query.userId || "",
       id: "4406",
-      data: ""
+      listData: ""
     };
   },
   mounted() {
@@ -26,9 +25,9 @@ export default {
   methods: {
     init() {
       this.$api.doclist.findAllDic([this.id]).then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.body) {
-          this.data = res.body;
+          this.listData = res.body;
         }
       });
     }
