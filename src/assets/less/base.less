@@ -1,3 +1,4 @@
+@import './color.less';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,8 +10,8 @@ body,
 html {
   font-size: 14px;
   height: 100%;
-  background: #fff;
-  color: #333;
+  background: @white;
+  color: @text1;
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -122,9 +123,9 @@ section {
 .mb10 {
   margin-bottom: 10px;
 }
-.bb1{
-  border-right: 1px solid #f2f2f2;
-}
+// .bb1{
+//   border-right: 1px solid #f2f2f2;
+// }
 /* 文字省略 */
 .ellip-1 {
   overflow: hidden;
