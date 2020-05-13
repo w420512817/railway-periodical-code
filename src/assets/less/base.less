@@ -1,4 +1,4 @@
-@import './color.less';
+@import "./color.less";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,12 +15,14 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-}
-* {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
 a {
   text-decoration: none;
   // color: #73b9fa;
@@ -28,14 +30,6 @@ a {
 ul,
 li {
   list-style: none;
-}
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
 }
 .clear {
   overflow: hidden;
@@ -46,6 +40,9 @@ section {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+.none {
+  display: none!important;
 }
 .f12 {
   font-size: 12px;
@@ -97,7 +94,7 @@ section {
   margin-top: 10px;
 }
 .m10 {
-  margin: 10px
+  margin: 10px;
 }
 .pd20 {
   padding: 20px;

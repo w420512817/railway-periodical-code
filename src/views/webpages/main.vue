@@ -67,7 +67,26 @@
         </div>
       </el-col>
       <el-col :span="8">
-        <div class="base-panel">
+        <div class="login-block" :class="[loginChange?'':'none']">
+          <div class="login-title">
+            <i class="el-icon-arrow-left" @click="loginChange=!loginChange"></i>
+            用户登录
+          </div>
+          <!-- <div class="login-input"></div> -->
+          <el-input class="login-input" v-model="loginForm.username" placeholder="请输入用户名" clearable></el-input>
+          <el-input class="login-input" v-model="loginForm.password" placeholder="请输入密码" clearable></el-input>
+          <div class="login-tip">
+            没有账号？
+            <el-link type="primary">立即注册</el-link>
+          </div>
+          <el-button class="login-submit" type="primary" @click="$router.push('/system')">下一步</el-button>
+          <el-radio v-model="loginForm.read" label="1">
+            我已阅读并同意
+            <el-link type="primary">《投稿须知》</el-link>与
+            <el-link type="primary">《版权转让协议》</el-link>
+          </el-radio>
+        </div>
+        <div class="base-panel" :class="{ none: loginChange }">
           <div class="base-panel-header">
             <span>在线办公</span>
             <!-- <el-button type="text">更多</el-button> -->
@@ -206,9 +225,14 @@ export default {
     return {
       userId: this.$route.query.userId || "",
       id: "4406",
-      listData: "",
       activeName: "0",
       activeName2: "0",
+      loginChange: true,
+      loginForm: {
+        username: "",
+        password: "",
+        read: ""
+      },
       linkData: [
         {
           data: [
@@ -314,17 +338,14 @@ export default {
   methods: {
     init() {
       this.$api.doclist.findAllDic([this.id]).then(res => {
-        // console.log(res);
-        if (res.body) {
-          this.listData = res.body;
-        }
+        console.log(res);
       });
     }
   }
 };
 </script>
 <style lang="less" scoped>
-@import "../assets/less/base";
+@import "../../assets/less/base";
 .base-panel {
   .base-panel-header {
     display: flex;
@@ -342,7 +363,6 @@ export default {
   }
 }
 .base-line {
-  text-align: left;
   display: flex;
   border-bottom: 1px dotted @border1;
   line-height: 28px;
@@ -368,6 +388,7 @@ export default {
   }
 }
 .link-block {
+  text-align: center;
   width: 100%;
   height: 100px;
   display: flex;
@@ -394,7 +415,6 @@ export default {
   color: @text2;
   font-size: 14px;
   line-height: 32px;
-  text-align: left;
   p {
     margin: 0;
   }
@@ -404,7 +424,6 @@ export default {
   // overflow-y: auto;
 }
 .news-list1 {
-  text-align: left;
   border-bottom: 1px dotted @border1;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -437,7 +456,6 @@ export default {
   }
 }
 .news-list2 {
-  text-align: left;
   border-bottom: 1px dotted @border1;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -466,7 +484,36 @@ export default {
   font-size: 14px;
   background-color: rgba(0, 0, 0, 0.6);
   height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.login-block {
+  // background-image: @linear3;
+  background-color: #f8fcff;
+  border: 1px solid @border1;
+  border-radius: 8px;
+  // height: 350px;
+  padding: 20px;
+  .login-title {
+    font-size: 32px;
+    color: @title1;
+    margin-bottom: 10px;
+  }
+  .login-input {
+    margin-bottom: 10px;
+  }
+  .login-tip {
+    font-size: 14px;
+    color: @gray1;
+    margin-bottom: 10px;
+  }
+  .login-submit {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
 .el-scrollbar {
   height: 100%;
 }
