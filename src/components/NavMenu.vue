@@ -23,7 +23,7 @@ export default {
       userSetting: [],
       menuList: [
         {
-          name: "预约管理",
+          name: "基本信息",
           id: 1,
           icon: "el-icon-document",
           path: "",
@@ -34,103 +34,123 @@ export default {
               path: "/system/blank"
             },
             {
-              name: "新增页面",
+              name: "基本信息",
               id: 3,
               path: "/system/dashboard"
             },
             {
-              name: "叫号系统",
+              name: "稿件上传",
               id: 4,
               path: "/system/jiaohao"
             },
             {
-              name: "设备管理",
+              name: "稿件列表",
               id: 5,
               path: "/system/equipment"
-            }
+            },
+            {
+              name: "稿件查询",
+              id: 5,
+              path: "/system/equipment"
+            },
+            {
+              name: "稿件审核",
+              id: 5,
+              path: "/system/equipment"
+            },
+            {
+              name: "稿件发表",
+              id: 5,
+              path: "/system/equipment"
+            },
+            {
+              name: "稿件发放",
+              id: 5,
+              path: "/system/equipment"
+            },
           ]
         },
-        {
-          name: "患者管理",
-          id: 6,
-          disabled: false,
-          path: "",
-          icon: "el-icon-user",
-          child: [
-            {
-              name: "患者列表",
-              id: 7,
-              disabled: false,
-              path: "/system/consumer"
-            },
-            {
-              name: "双向转诊",
-              id: 13,
-              disabled: false,
-              path: "/system/referral"
-            },
-            {
-              name: "盆底术后",
-              id: 15,
-              disabled: false,
-              path: "/system/afterPeration"
-            },
-            {
-              name: "医患互动",
-              id: 14,
-              disabled: false,
-              path: "/system/question"
-            },
-            {
-              name: "报告查询",
-              id: 16,
-              disabled: false,
-              path: "/system/reportSearch"
-            }
-          ]
-        },
-        {
-          name: "统计分析",
-          id: 8,
-          disabled: false,
-          icon: "el-icon-pie-chart",
-          path: "",
-          child: [
-            {
-              name: "日常统计",
-              id: 9,
-              disabled: false,
-              path: "/system/statistics"
-            },
-            {
-              name: "数据导出",
-              id: 10,
-              disabled: false,
-              path: "/system/export"
-            },
-            {
-              name: "术后统计",
-              id: 17,
-              disabled: false,
-              path: "/system/shStatistics"
-            }
-          ]
-        },
-        {
-          name: "系统管理",
-          id: 11,
-          disabled: false,
-          icon: "el-icon-setting",
-          path: "",
-          child: [
-            {
-              name: "权限管理",
-              id: 12,
-              disabled: false,
-              path: "/system/authority"
-            }
-          ]
-        }
+        // {
+        //   name: "患者管理",
+        //   id: 6,
+        //   disabled: false,
+        //   path: "",
+        //   icon: "el-icon-user",
+        //   child: [
+        //     {
+        //       name: "患者列表",
+        //       id: 7,
+        //       disabled: false,
+        //       path: "/system/consumer"
+        //     },
+        //     {
+        //       name: "双向转诊",
+        //       id: 13,
+        //       disabled: false,
+        //       path: "/system/referral"
+        //     },
+        //     {
+        //       name: "盆底术后",
+        //       id: 15,
+        //       disabled: false,
+        //       path: "/system/afterPeration"
+        //     },
+        //     {
+        //       name: "医患互动",
+        //       id: 14,
+        //       disabled: false,
+        //       path: "/system/question"
+        //     },
+        //     {
+        //       name: "报告查询",
+        //       id: 16,
+        //       disabled: false,
+        //       path: "/system/reportSearch"
+        //     }
+        //   ]
+        // },
+        // {
+        //   name: "统计分析",
+        //   id: 8,
+        //   disabled: false,
+        //   icon: "el-icon-pie-chart",
+        //   path: "",
+        //   child: [
+        //     {
+        //       name: "日常统计",
+        //       id: 9,
+        //       disabled: false,
+        //       path: "/system/statistics"
+        //     },
+        //     {
+        //       name: "数据导出",
+        //       id: 10,
+        //       disabled: false,
+        //       path: "/system/export"
+        //     },
+        //     {
+        //       name: "术后统计",
+        //       id: 17,
+        //       disabled: false,
+        //       path: "/system/shStatistics"
+        //     }
+        //   ]
+        // },
+        // {
+        //   name: "系统管理",
+        //   id: 11,
+        //   disabled: false,
+        //   icon: "el-icon-setting",
+        //   path: "",
+        //   child: [
+        //     {
+        //       name: "权限管理",
+        //       id: 12,
+        //       disabled: false,
+        //       path: "/system/authority"
+        //     }
+        //   ]
+        // }
       ]
     };
   },

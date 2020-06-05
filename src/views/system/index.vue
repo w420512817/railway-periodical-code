@@ -30,8 +30,6 @@ export default {
   }
 };
 </script>
-<style lang="less">
-@import "../../assets/less/base";
-</style>
+
 <style lang="less" scoped>
 </style>

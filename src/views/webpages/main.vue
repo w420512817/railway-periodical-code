@@ -345,7 +345,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../../assets/less/base";
+@import "../../assets/less/base.less";
 .base-panel {
   .base-panel-header {
     display: flex;

@@ -2,6 +2,7 @@
   <div class="header">
     <div class="title">标题</div>
     <div class="info">
+      <el-link icon="el-icon-house" @click="$router.push('/main')">首页</el-link>
       <el-link icon="el-icon-user">{{ user }}</el-link>
       <el-link icon="el-icon-edit" @click="logout">退出</el-link>
     </div>
