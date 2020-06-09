@@ -5,9 +5,7 @@
         <div class="title">铁道车辆</div>
         <div class="btn">简体中文|ENGLISH</div>
       </div>
-      <div class="nav_box">
-
-      </div>
+      <div class="nav_box"></div>
       <!-- <div class="nav-box">
         <template v-for="(item, index) in navList">
           <router-link class="nav-item" :to="item.value" :key="index">
@@ -23,6 +21,7 @@
   </div>
 </template>
 <script>
+import { get } from "../../plugins/http";
 export default {
   data() {
     return {
@@ -34,6 +33,13 @@ export default {
         { value: "/", name: "联系我们", icon: "el-icon-phone" }
       ]
     };
+  },
+  mounted() {
+    get("m/site.php?act=findwxnewlist", {}).then(
+      res => {
+        console.log(res);
+      }
+    );
   }
 };
 </script>
@@ -58,7 +64,7 @@ export default {
       font-size: 16px;
     }
   }
-  .nav_box{
+  .nav_box {
     box-sizing: border-box;
     height: 64px;
     background-color: @background2;
