@@ -1,0 +1,41 @@
+@import "./color.less";
+.base-panel {
+  .base-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid @border1;
+    span {
+      font-size: 32px;
+      color: @title1;
+    }
+    &.black {
+      background-color: @background3;
+      span {
+        color: @white;
+      }
+    }
+    .more-btn {
+      color: @gray1;
+    }
+  }
+  .base-panel-body {
+    padding: 10px 0;
+  }
+}
+.base-line {
+  display: flex;
+  border-bottom: 1px dotted @border1;
+  line-height: 28px;
+  font-size: 14px;
+  .base-line-title {
+    color: @gray1;
+    // width: 80px;
+    flex-basis: 80px;
+    text-align: left;
+  }
+  .base-line-info {
+    color: @text2;
+  }
+}

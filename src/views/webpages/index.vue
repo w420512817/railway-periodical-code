@@ -1,22 +1,45 @@
 <template>
   <div>
     <div id="nav" class="nav">
+      <div class="nav-login-box container" v-if="isLogin">
+        <div>
+          欢迎您，{{loginName}}
+          <i class="el-icon-right"></i>
+        </div>
+        <!-- <div v-else></div> -->
+      </div>
       <div class="nav_title container">
         <div class="title">铁道车辆</div>
         <div class="btn">简体中文|ENGLISH</div>
       </div>
-      <div class="nav_box"></div>
-      <!-- <div class="nav-box">
-        <template v-for="(item, index) in navList">
-          <router-link class="nav-item" :to="item.value" :key="index">
-            <i :class="item.icon"></i>
-            <p>{{ item.name }}</p>
-          </router-link>
-        </template>
-      </div>-->
+      <div class="nav_box">
+        <div class="nav_content">
+          <template v-for="(item, index) in navList">
+            <router-link class="nav_item" :to="item.value" :key="index">{{ item.name }}</router-link>
+          </template>
+        </div>
+      </div>
     </div>
     <div class="container">
       <router-view />
+    </div>
+    <div class="footer">
+      <div class="footer-info">
+        <div>地址：山东省青岛市市北区瑞昌路231号</div>
+        <div>
+          <span>电话：0532-86083210 053</span>
+          <span>|</span>
+          <span>邮箱：tdclbjb@vip.sina.com</span>
+          <span>|</span>
+          <span>邮编：266031</span>
+        </div>
+        <div>
+          <span>技术支持：杭州福汀科技有限公司</span>
+          <span>|</span>
+          <span>总访问量：237327</span>
+        </div>
+        <div>版权所有 铁道期刊 2020 保留一切权利 浙ICP备*****3223号</div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,12 +49,19 @@ export default {
   data() {
     return {
       navList: [
-        { value: "/main", name: "首页", icon: "el-icon-s-home" },
-        { value: "/", name: "期刊介绍", icon: "el-icon-s-order" },
+        { value: "/main", name: "网站首页", icon: "el-icon-s-home" },
+        {
+          value: "/periodicalDetail",
+          name: "期刊介绍",
+          icon: "el-icon-s-order"
+        },
         { value: "/", name: "编委会", icon: "el-icon-user-solid" },
+        { value: "/", name: "理事会", icon: "el-icon-user-solid" },
         { value: "/", name: "期刊订阅", icon: "el-icon-star-on" },
         { value: "/", name: "联系我们", icon: "el-icon-phone" }
-      ]
+      ],
+      isLogin: true,
+      loginName: "张三"
     };
   },
   mounted() {
@@ -44,13 +74,17 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../../assets/less/color";
+  @import "../../assets/less/color";
 .nav {
+  .nav-login-box {
+    background-color: @white;
+    text-align: right;
+  }
   // height: 230px;
   box-sizing: border-box;
   .nav_title {
     box-sizing: border-box;
-    padding: 55px;
+    padding: 30px;
     background-color: @white;
     display: flex;
     justify-content: space-between;
@@ -68,44 +102,35 @@ export default {
     box-sizing: border-box;
     height: 64px;
     background-color: @background2;
+    .nav_content {
+      display: flex;
+      margin: 0 auto;
+      max-width: 1280px;
+      justify-content: flex-end;
+      .nav_item {
+        margin: 0 50px;
+        color: white;
+        font-size: 16px;
+        line-height: 64px;
+      }
+    }
   }
 }
-// .nav {
-//   height: 600px;
-//   .nav-box {
-//     text-align: center;
-//     background-image: @linear1;
-//     width: 1190px;
-//     margin: 0 auto;
-//     position: relative;
-//     top: 400px;
-//     height: 150px;
-//     display: flex;
-//     border-radius: 8px;
-//     .nav-item {
-//       width: 20%;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-//       color: @white;
-//       font-size: 16px;
-//       border-radius: 8px;
-//       &:hover {
-//         background-image: @linear2;
-//       }
-//       i {
-//         color: @white;
-//         display: block;
-//         font-size: 50px;
-//       }
-//       p {
-//       }
-//     }
-//   }
-// }
 .container {
-  width: 1728px;
+  max-width: 1280px;
   margin: 0 auto;
   background-color: @white;
+}
+.footer {
+  background-color: @background4;
+  padding: 25px;
+  .footer-info {
+    text-align: center;
+    color: @white;
+    font-size: 14px;
+    > div {
+      margin-bottom: 10px;
+    }
+  }
 }
 </style>

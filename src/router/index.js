@@ -15,8 +15,14 @@ const routes = [
     name: "index",
     redirect: "/main",
     component: () => import("../views/webpages/index.vue"),
-    children: [
-      { path: "main", component: () => import("../views/webpages/main.vue") }
+    children: [{
+        path: "main",
+        component: () => import("../views/webpages/main.vue")
+      },
+      {
+        path: "periodicalDetail",
+        component: () => import("../views/webpages/periodicalDetail.vue")
+      }
     ]
   },
   {
@@ -24,8 +30,10 @@ const routes = [
     name: "system",
     redirect: "/system/blank",
     component: () => import("../views/system/index.vue"),
-    children: [
-      { path: "blank", component: () => import("../views/system/blank.vue") },
+    children: [{
+        path: "blank",
+        component: () => import("../views/system/blank.vue")
+      },
       {
         path: "dashboard",
         component: () => import("../views/system/dashboard.vue")
