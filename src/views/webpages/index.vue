@@ -3,7 +3,7 @@
     <div id="nav" class="nav">
       <div class="nav-login-box container" v-if="isLogin">
         <div>
-          欢迎您，{{loginName}}
+          欢迎您，{{ loginName }}
           <i class="el-icon-right"></i>
         </div>
         <!-- <div v-else></div> -->
@@ -65,16 +65,27 @@ export default {
     };
   },
   mounted() {
-    get("m/site.php?act=findwxnewlist", {}).then(
-      res => {
-        console.log(res);
-      }
-    );
+    // 动态信息、国外铁路动态  首页顶部导航栏信息
+    get("m/site.php?act=findwxnewlist", {}).then(res => {
+      console.log(res);
+    });
+    // 动态信息、国外铁路动态（点击更多）
+    get("m/site.php?act=morearticle&page=1&art_type=1", {}).then(res => {
+      console.log(res);
+    });
+    // 模板下载列表
+    get("m/site.php?act=ajax_modellist", {}).then(res => {
+      console.log(res);
+    });
+    // 首页bannner
+    get("m/site.php?act=banner", {}).then(res => {
+      console.log(res);
+    });
   }
 };
 </script>
 <style lang="less" scoped>
-  @import "../../assets/less/color";
+@import "../../assets/less/color";
 .nav {
   .nav-login-box {
     background-color: @white;
