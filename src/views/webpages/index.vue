@@ -10,7 +10,10 @@
       </div>
       <div class="nav_title container">
         <div class="title">铁道车辆</div>
-        <div class="btn">简体中文|ENGLISH</div>
+        <div class="btn">
+          <el-button type="text">简体中文</el-button>|
+          <el-button type="text">ENGLISH</el-button>
+        </div>
       </div>
       <div class="nav_box">
         <div class="nav_content">
@@ -55,10 +58,10 @@ export default {
           name: "期刊介绍",
           icon: "el-icon-s-order"
         },
-        { value: "/", name: "编委会", icon: "el-icon-user-solid" },
+        { value: "/editorialBoard", name: "编委会", icon: "el-icon-user-solid" },
         { value: "/", name: "理事会", icon: "el-icon-user-solid" },
-        { value: "/", name: "期刊订阅", icon: "el-icon-star-on" },
-        { value: "/", name: "联系我们", icon: "el-icon-phone" }
+        { value: "/subscribe", name: "期刊订阅", icon: "el-icon-star-on" },
+        { value: "/aboutUs", name: "联系我们", icon: "el-icon-phone" }
       ],
       isLogin: true,
       loginName: "张三"

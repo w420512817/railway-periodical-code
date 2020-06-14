@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div class=" pd20">
     <el-row :gutter="20">
       <el-col :span="16">
         <div class="base-panel">

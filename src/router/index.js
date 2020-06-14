@@ -15,14 +15,33 @@ const routes = [
     name: "index",
     redirect: "/main",
     component: () => import("../views/webpages/index.vue"),
-    children: [{
+    children: [
+      // 首页
+      {
         path: "main",
         component: () => import("../views/webpages/main.vue")
       },
+      // 期刊介绍
       {
         path: "periodicalDetail",
         component: () => import("../views/webpages/periodicalDetail.vue")
-      }
+      },
+      // 编委会
+      {
+        path: "editorialBoard",
+        component: () => import("../views/webpages/editorialBoard.vue")
+      },
+      // 期刊订阅
+        {
+          path: "subscribe",
+          component: () => import("../views/webpages/subscribe.vue")
+        },
+      // 关于我们
+        {
+          path: "aboutUs",
+          component: () => import("../views/webpages/aboutUs.vue")
+        },
+
     ]
   },
   {
